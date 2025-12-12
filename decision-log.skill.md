@@ -8,6 +8,7 @@
 
 在你的 repo 根目录执行：
 
+```
 mkdir -p docs/adr
 cat > docs/adr/ADR_TEMPLATE.md <<'EOF'
 # ADR-____: <标题>
@@ -62,6 +63,7 @@ All notable changes will be documented in this file.
 ### Changed
 ### Fixed
 EOF
+```
 
 ADR 的核心结构（title/status/context/decision/consequences）是业界常用的 Nygard 风格；模板站点也给了这种结构的标准形式。 ￼
 CHANGELOG.md 的“只记录 notable changes”思路来自 Keep a Changelog。 ￼
@@ -74,6 +76,7 @@ Codex Skills 的约定是：在 ~/.codex/skills/**/SKILL.md 放一个带 YAML fr
 
 执行：
 
+```
 mkdir -p ~/.codex/skills/decision-log
 cat > ~/.codex/skills/decision-log/SKILL.md <<'EOF'
 ---
@@ -110,7 +113,7 @@ If major:
 - Never modify non-doc code files.
 - Keep ADR minimal; focus on Decision + Alternatives + Consequences + Outcome placeholder.
 EOF
-
+```
 
 ⸻
 
@@ -121,10 +124,11 @@ hooks 默认在 $GIT_DIR/hooks，但可以用 core.hooksPath 指向 repo 内目�
 
 在 repo 根目录执行：
 
+```
 mkdir -p .githooks
 git config --local core.hooksPath .githooks
 chmod -R +x .githooks
-
+```
 
 ⸻
 
@@ -132,6 +136,7 @@ chmod -R +x .githooks
 
 新建 .githooks/pre-commit：
 
+```
 cat > .githooks/pre-commit <<'EOF'
 #!/usr/bin/env bash
 set -euo pipefail
@@ -175,6 +180,7 @@ exit 0
 EOF
 
 chmod +x .githooks/pre-commit
+```
 
 说明：pre-commit 脚本必须是可执行文件，否则 Git 会忽略。 ￼
 
@@ -193,8 +199,10 @@ chmod +x .githooks/pre-commit
 
 照常开发、照常：
 
+```
 git add -A
 git commit -m "xxx"
+```
 
 	•	如果不重大：什么都不会发生（或只打印 NO-ADR）。
 	•	如果重大：本次 commit 会自动包含 ADR / decisions / changelog 的更新。
