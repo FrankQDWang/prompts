@@ -3,15 +3,7 @@
 
   请阅读并审查以下计划文件：
 
-  - docs/plans/P0.55-world-graph-godot-integration-fix.md
-  - 对照已有文档：
-      - docs/plans/P0.1-fanfic-world-import.md
-      - docs/plans/P0.5-graphrag-visualization.md
-  - 如有必要，可抽样查看相关代码：
-      - 前端：sextant-ui/src/features/world/**, sextant-ui/src/pages/WorkspacePage.tsx
-      - Godot：sextant-graph/scenes/main.tscn, sextant-graph/scripts/**
-      - 后端：src/api/routes/world_graph.py, src/domain/world/**
-
+  - 
   你的任务是从 “是否真实反映当前代码现状 + 是否足够闭环问题” 的角度来挑错和补洞，而不是重新写一份计划。请特别关注：
 
   1. 计划中的前提假设是否与当前代码 / 配置相符？（如 Godot 主场景、JSBridge 使用、world-graph API 路径、Config.gd 的
